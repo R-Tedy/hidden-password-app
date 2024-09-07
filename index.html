@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hiddn Password</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="main">
+    <div class="password-container">
+      <input type="password" placeholder="Password" id="password">
+      <img src="./images/eye-close.png" alt="" id="eye">
+    </div>
+  </div>
+</body>
+
+<script>
+   
+  let password = document.getElementById('password');
+  let eye = document.getElementById('eye');
+
+  eye.onclick = ()=>{
+    if (password.type == 'password'){
+      password.type = 'text'; 
+      eye.src = './images/eye-open.png';
+    } else {
+      password.type = 'password'
+      eye.src = './images/eye-close.png';
+
+    }
+  }
+
+  password.addEventListener('keyup',()=>{
+    eye.style.display = 'block';
+  })
+
+</script>
+</html>
